@@ -22,7 +22,6 @@ public class Greeting {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-
     private final String message;
 
     public Greeting() {
