@@ -34,4 +34,9 @@ public class GreetingServiceImpl implements GreetingService{
     public List<Greeting> getAllGreeting() {
         return greetingRepository.findAll();
     }
+
+    @Override
+    public Greeting updateGreeting(Greeting greeting) {
+        return greetingRepository.save(new Greeting(4L, "Message Updated Successfully!!"));
+    }
 }

@@ -33,4 +33,9 @@ public class GreetingController {
     public List<Greeting> getAllGreeting() {
         return greetingService.getAllGreeting();
     }
+
+    @PutMapping("/update")
+    public Greeting updateGreeting (Greeting greeting) {
+        return greetingService.updateGreeting(greeting);
+    }
 }
