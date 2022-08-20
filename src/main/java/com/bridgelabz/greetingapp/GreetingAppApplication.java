@@ -10,5 +10,4 @@ public class GreetingAppApplication {
 		SpringApplication.run(GreetingAppApplication.class, args);
 		System.out.println("Welcome to Bridgelabz");
 	}
-
 }
