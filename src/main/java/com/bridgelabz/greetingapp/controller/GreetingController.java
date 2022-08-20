@@ -16,12 +16,12 @@ public class GreetingController {
     private GreetingService greetingService;
 
     @GetMapping(value = {"/", "/message", ""})
-    public Greeting greetingMessage(@RequestParam(required = false,defaultValue =  "") String firstName, @RequestParam(required = false,defaultValue =  "") String lastName) {
+    public Greeting greetingMessage(@RequestParam(required = false, defaultValue = "") String firstName, @RequestParam(required = false, defaultValue = "") String lastName) {
 //        return new Greeting(counter.incrementAndGet(), String.format(template, firstName, lastName));
-    User user = new User();
-    user.setFirstName(firstName);
-    user.setLastName(lastName);
-    return greetingService.addGreeting(user);
+        User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        return greetingService.addGreeting(user);
     }
 
     @GetMapping("/getbyid/{id}")
@@ -35,7 +35,12 @@ public class GreetingController {
     }
 
     @PutMapping("/update")
-    public Greeting updateGreeting (Greeting greeting) {
+    public Greeting updateGreeting(Greeting greeting) {
         return greetingService.updateGreeting(greeting);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteMessageById(@PathVariable Long id) {
+        return greetingService.deleteMessageById(id);
     }
 }
